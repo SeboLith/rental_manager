@@ -21,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '70k_w&ihy=&aq095*5_nak58usn*j@d%e^*s)me8!_-3dp0=@l'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'knox',
-    # 'corsheaders',
     'profiles.apps.ProfilesConfig',
     'authentication.apps.AuthenticationConfig',
     'frontend',
@@ -54,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'corsheaders.middleware.CorsMiddleware',
 ]
 
 if DEBUG:
@@ -129,16 +127,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# URL to use when referring to static files located in STATIC_ROOT
 STATIC_URL = '/static/'
+# Absolute filesystem path to the directory that will hold user-uploaded files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# URL that handles the media served from MEDIA_ROOT
 MEDIA_URL = '/media/'
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 FRONTEND_BUILD_ROOT = os.path.join(REACT_APP_DIR, 'build')
+
+# Aist of directories where Django will also look for static files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(FRONTEND_BUILD_ROOT, 'static')
 ]
 
 STATIC_ASSET_MANIFEST = load_static_asset_manifest(FRONTEND_BUILD_ROOT)
-print(f">>>>> STATIC_ASSET_MANIFEST: {STATIC_ASSET_MANIFEST}")

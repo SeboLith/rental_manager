@@ -7,11 +7,11 @@
     {% if main_css %}
         <link rel="stylesheet" href="{% static main_css %}">
     {% endif %}
-    <title>DJCRA</title>
+    <title>Rental Manager</title>
 </head>
 <body>
 {% spaceless %}
-    {% if main_js %}
+    {% if static_js and main_js %}
         <div id="root"></div>
         <script>
           !(function(p) {
@@ -106,9 +106,6 @@
         </script>
         <script type="text/javascript" src="{% static static_js %}"></script>
         <script type="text/javascript" src="{% static main_js %}"></script>
-    {% endif %}
-    {% if bundle_js %}
-        <script type="text/javascript" src="{{ bundle_js }}"></script>
     {% endif %}
 {% endspaceless %}
 </body>

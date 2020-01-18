@@ -33,7 +33,7 @@ ReactDOM.render(
         <Route path="/logout" component={Logout} />
         <Route path="/rtl" component={RTL} />
         <Route exact path="/" component={Home} />
-        <Redirect from="*" to="" />
+        <Redirect to="/" />
       </Switch>
     </Router>
   </Provider>,

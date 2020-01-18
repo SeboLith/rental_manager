@@ -20,11 +20,17 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from frontend import views
 
+handler404 = 'frontend.views.view_404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profiles/', include('profiles.urls')),
     path('auth/', include('authentication.urls')),
 ]
 
+# allow requests for the stacic files
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += [url(r'^$', views.index, name='index')]
+urlpatterns += [
+    # match the root
+    url(r'^$', views.index, name='index'),
+]
