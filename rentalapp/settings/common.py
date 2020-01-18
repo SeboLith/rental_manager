@@ -11,25 +11,16 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from .settings_helpers import load_static_asset_manifest
+from rentalapp.settings.helpers import load_static_asset_manifest
 
+# Build paths inside the project like this: os.path.join(ROOT_DIR, ...)
+ROOT_DIR = os.path.abspath(os.path.dirname(__name__))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# Set to `True` for requests from `http://localhost:3000`
-# When set to `False`, run `python manage.py runserver --insecure` locally to serve static files
-DEBUG = os.environ.get('DJANGO_DEBUG') != ''
-print(f'>>> DEBUG: {DEBUG}')
-
-ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -80,17 +71,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'rentalapp.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -130,17 +110,19 @@ USE_TZ = True
 # URL to use when referring to static files located in STATIC_ROOT
 STATIC_URL = '/static/'
 # Absolute filesystem path to the directory that will hold user-uploaded files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
 # URL that handles the media served from MEDIA_ROOT
 MEDIA_URL = '/media/'
 
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+REACT_APP_DIR = os.path.join(ROOT_DIR, 'frontend')
 FRONTEND_BUILD_ROOT = os.path.join(REACT_APP_DIR, 'build')
 
 # Aist of directories where Django will also look for static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(ROOT_DIR, 'static'),
     os.path.join(FRONTEND_BUILD_ROOT, 'static')
 ]
+
+print(f'>>> FRONTEND_BUILD_ROOT: {FRONTEND_BUILD_ROOT}')
 
 STATIC_ASSET_MANIFEST = load_static_asset_manifest(FRONTEND_BUILD_ROOT)

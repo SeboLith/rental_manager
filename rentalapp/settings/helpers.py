@@ -24,6 +24,6 @@ def load_static_asset_manifest(frontend_build_root):
                 "main_js": main_js,
             }
     except Exception as e:
-        logging.warning(f">>>>> Can't load static asset manifest: {e}")
+        logging.warning(f">>> Can't load static asset manifest: {e}")
 
     return None
