@@ -1,4 +1,4 @@
-django
-djangorestframework
-django-rest-knox
-pillow
+django==3.0.2
+djangorestframework==3.2.3
+django-rest-knox==4.1.0
+pillow==7.0.0

@@ -1,19 +1,20 @@
 <!doctype html>{% load static %}
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">
     <link rel="shortcut icon" href="/favicon.ico">
     {% if main_css %}
-        <link rel="stylesheet" href="{% static main_css %}">
+    <link rel="stylesheet" href="{% static main_css %}">
     {% endif %}
     <title>Rental Manager</title>
-</head>
-<body>
-{% spaceless %}
+  </head>
+  <body>
+    {% spaceless %}
     {% if static_js and main_js %}
-        <div id="root"></div>
-        <script>
+    <div id="root"></div>
+    <script>
           !(function(p) {
             function e(e) {
               for (
@@ -104,9 +105,9 @@
             f();
           })([]);
         </script>
-        <script type="text/javascript" src="{% static static_js %}"></script>
-        <script type="text/javascript" src="{% static main_js %}"></script>
+    <script type="text/javascript" src="{% static static_js %}"></script>
+    <script type="text/javascript" src="{% static main_js %}"></script>
     {% endif %}
-{% endspaceless %}
-</body>
+    {% endspaceless %}
+  </body>
 </html>
