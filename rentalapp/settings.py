@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Set to True for requests from `http://localhost:3000`
+# Set to `True` for requests from `http://localhost:3000`
+# When set to `False`, run `python manage.py runserver --insecure` locally to serve static files
 DEBUG = os.environ.get('DJANGO_DEBUG') != ''
 print(f'>>> DEBUG: {DEBUG}')
 
@@ -56,10 +57,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-if DEBUG:
-    # Allow cors requests from `http://localhost:3000`
-    MIDDLEWARE.append('rentalapp.middleware.dev_cors_middleware')
 
 ROOT_URLCONF = 'rentalapp.urls'
 
