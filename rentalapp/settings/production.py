@@ -1,10 +1,5 @@
 from rentalapp.settings.common import *
 
-
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-DEBUG = False
-print(f'>>> DEBUG: {DEBUG}')
-
 # SECURITY WARNING: update this when you have the production host
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
 

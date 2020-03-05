@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
@@ -135,9 +133,9 @@ export default function Notifications() {
           and styled by{" "}
           <a
             target="_blank"
-            href="https://www.creative-tim.com/?ref=mdr-notifications-page"
+            href="#"
           >
-            Creative Tim
+            Reginald Mathieu
           </a>
           . Please checkout the{" "}
           <a href="#pablo" target="_blank">

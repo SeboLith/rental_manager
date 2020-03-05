@@ -2,17 +2,13 @@
 
 This project integrates a Django backend with a React frontend
 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+
 ### Prerequisites
-
-`Django` is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
-
-```
-$ pip install django
-```
 
 `Pipenv` automatically creates and manages a virtualenv for the project, as
 well as adds/removes packages from the `Pipfile` as packages are
@@ -22,25 +18,40 @@ installed/uninstalled. It also generates the ever-important
 ```
 $ pip install pipenv
 ```
-### Virtual project environment specific dependencies 
+
+Activate the `Pipenv` shell. This will spawn a new shell subprocess, which can be deactivated by using `exit`.
+
+```
+$ pipenv shell
+```
+
+Install the package requirements in `Pipfile`.
+
+```
+$ pipenv install
+```
+
+Install the frontend dependencies
+```
+$ cd frontend && npm install
+```
+
+Build the frontend static files that will be served
+```
+$ npm run build
+```
+
+
+### Virtual project environment specific dependencies
+
+`Django` is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 
 `Django REST framework` is a powerful and flexible toolkit for building Web APIs.
 
-```
-$ pipenv install djangorestframework
-```
-
 `django-rest-knox` is an authentication Module for django rest auth.
-
-```
-$ pipenv install django-rest-knox
-```
 
 `Pillow` is the friendly `PIL` fork by _`Alex Clark and Contributors`_. `PIL` is the Python Imaging Library by _`Fredrik Lundh and Contributors`_.
 
-```
-$ pipenv install pillow
-```
 
 ### Migrating database changes
 
@@ -48,11 +59,27 @@ $ pipenv install pillow
 $ python manage.py makemigrations
 ```
 
+
 ### Applying migrations
 
 ```
 $ python manage.py migrate
 ```
+
+
+### Create a superuser
+
+````
+$ python manage.py createsuperuser
+````
+
+
+### Running the local server
+
+````
+$ python manage.py runserver
+````
+
 
 ### Seeding users
 
@@ -71,6 +98,7 @@ $ curl --request POST \
     "email": "elmer.fudd@email.com"
   }'
 ```
+
 
 ### Retrieving users
 
@@ -154,18 +182,6 @@ Make a delete request to: http://localhost:8000/auth/users/<user_id>/
 $  curl --location --request DELETE 'http://localhost:8000/auth/users/2/'
 ```
 
-### Running the virtual environment
-
-````
-$ cd djangoreact/
-$ pipenv shell
-````
-
-### Running the local server
-
-````
-$ python manage.py runserver
-````
 
 ## License
 

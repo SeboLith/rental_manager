@@ -33,4 +33,6 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += [
     # match the root
     url(r'^$', views.index, name='index'),
+    # match all other pages
+    url(r'^(?:.*)/?$', views.index, name='index'),
 ]

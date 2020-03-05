@@ -23,6 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+# SECURITY WARNING: don't run with debug turned on in production!
+# Set to `True` for requests from `http://localhost:3000`
+# When set to `False`, run `python manage.py runserver --insecure` locally to serve static files
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -117,7 +124,7 @@ MEDIA_URL = '/media/'
 REACT_APP_DIR = os.path.join(ROOT_DIR, 'frontend')
 FRONTEND_BUILD_ROOT = os.path.join(REACT_APP_DIR, 'build')
 
-# Aist of directories where Django will also look for static files
+# List of directories where Django will also look for static files
 STATICFILES_DIRS = [
     os.path.join(ROOT_DIR, 'static'),
     os.path.join(FRONTEND_BUILD_ROOT, 'static')
