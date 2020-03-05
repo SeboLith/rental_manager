@@ -40,6 +40,7 @@ Build the frontend static files that will be served
 ```
 $ npm run build
 ```
+Ensure environmental variables are set.
 
 
 ### Virtual project environment specific dependencies
@@ -56,7 +57,7 @@ $ npm run build
 ### Migrating database changes
 
 ```
-$ python manage.py makemigrations
+$ cd .. && python manage.py makemigrations
 ```
 
 
