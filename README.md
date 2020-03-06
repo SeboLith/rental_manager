@@ -77,6 +77,11 @@ $ python manage.py createsuperuser
 
 ### Running the local server
 
+Run the following command for production simulation on `localhost:8000` with `DJANGO_DEBUG` set to false
+````
+$ python manage.py runserver --insecure
+````
+Run the following command for dev environment on `localhost:3000` with `DJANGO_DEBUG` set to true
 ````
 $ python manage.py runserver
 ````
