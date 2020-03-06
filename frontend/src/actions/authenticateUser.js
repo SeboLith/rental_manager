@@ -31,8 +31,8 @@ export const authenticateUser = (user, { history }) => dispatch => {
         type: types.IS_LOADING,
         payload: false
       });
-      // on a successful login redirect to the admin
-      history.push('/admin');
+      // on a successful login redirect to the dashboard
+      history.push('/dashboard');
     })
     .catch(err => {
       dispatch({

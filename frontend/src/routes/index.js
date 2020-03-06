@@ -20,12 +20,12 @@ import RTLPage from "views/RTLPage";
 
 const dashboardRoutes = [
   {
-    path: "/dashboard",
+    path: "/home",
     name: "Dashboard",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/user-profile",
@@ -33,7 +33,7 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/account",
@@ -41,7 +41,7 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: Account,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/users",
@@ -49,7 +49,7 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: Users,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/table",
@@ -57,7 +57,7 @@ const dashboardRoutes = [
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/typography",
@@ -65,7 +65,7 @@ const dashboardRoutes = [
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/icons",
@@ -73,7 +73,7 @@ const dashboardRoutes = [
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/maps",
@@ -81,7 +81,7 @@ const dashboardRoutes = [
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/notifications",
@@ -89,7 +89,7 @@ const dashboardRoutes = [
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
-    layout: "/admin"
+    layout: "/dashboard"
   },
   {
     path: "/rtl-page",

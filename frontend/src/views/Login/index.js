@@ -61,7 +61,7 @@ export default function Login(props) {
 
   // if the user is authenticated, redirect them to the dashboard
   if (isAuthenticated) {
-    props.history.push("/admin");
+    props.history.push("/dashboard");
   }
 
   // allow the `useFormValidation` hook to handle the form's state and related submit logic

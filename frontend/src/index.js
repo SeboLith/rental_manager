@@ -28,7 +28,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hist}>
       <Switch>
-        <PrivateRoute path="/admin" component={Admin} />
+        <PrivateRoute path="/dashboard" component={Admin} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
         <Route path="/rtl" component={RTL} />

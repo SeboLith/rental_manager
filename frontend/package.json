@@ -2,6 +2,7 @@
   "author": "Reginald Mathieu",
   "name": "rental_app",
   "version": "0.0.1",
+  "homepage": "./",
   "description": "This project integrates a Django backend with a React frontend",
   "private": true,
   "main": "start.js",
