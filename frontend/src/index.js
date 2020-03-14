@@ -11,7 +11,7 @@ import Admin from "layouts/Admin";
 import Login from "views/Login";
 import Logout from "views/Logout";
 import Home from "views/Home";
-import RTL from "layouts/RTL";
+// import RTL from "layouts/RTL";
 
 import "assets/css/app.css";
 
@@ -31,7 +31,7 @@ ReactDOM.render(
         <PrivateRoute path="/dashboard" component={Admin} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
-        <Route path="/rtl" component={RTL} />
+        {/* <Route path="/rtl" component={RTL} /> */}
         <Route exact path="/" component={Home} />
         <Redirect to="/" />
       </Switch>

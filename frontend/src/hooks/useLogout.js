@@ -8,10 +8,6 @@ export default function({ history }) {
   function handleLogout() {
     const { token } = useSelector(state => state.auth);
 
-    console.log(">>>>> in `logoutUser`");
-    console.log(">>>>> token ::", token);
-    console.log(">>>>> history ::", JSON.stringify(history));
-
     dispatch({
       type: types.IS_LOADING,
       payload: true

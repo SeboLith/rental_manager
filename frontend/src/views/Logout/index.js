@@ -11,7 +11,6 @@ export default function Logout({ history }) {
   useEffect(() => {
     logoutUser(token)
       .then(res => {
-        console.log(">>>> Logged out user");
         dispatch({
           type: types.LOGGED_OUT
         });
@@ -35,5 +34,5 @@ export default function Logout({ history }) {
       .finally(data => data);
   }, []);
 
-  return (<div>Logout</div>);
+  return <></>;
 }

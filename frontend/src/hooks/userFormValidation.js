@@ -9,31 +9,29 @@ export default function(initialState, props, submitFunction) {
     state => state.auth
   );
   const [values, setValues] = useState(initialState);
-  // const [errors, setErrors] = useState({});
-  // const [isSubmitting, setSubmitting] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     // check if the user should be successfully authenticated or show errors
-    console.log(
-      `>>>>> formValidationErrors 1: ${JSON.stringify(formValidationErrors)}`
-    );
+    // console.log(
+    //   `>>>>> formValidationErrors 1: ${JSON.stringify(formValidationErrors)}`
+    // );
 
     if (isSubmitting) {
       const errorList = Object.keys(formValidationErrors);
       let err = false;
       for (let i = 0; i < errorList.length; i++) {
-        console.log(
-          `>>>>> errors[errorList[i]] ${JSON.stringify(
-            formValidationErrors[errorList[i]]
-          )}`
-        );
+        // console.log(
+        //   `>>>>> errors[errorList[i]] ${JSON.stringify(
+        //     formValidationErrors[errorList[i]]
+        //   )}`
+        // );
         if (formValidationErrors[errorList[i]]) {
-          console.log(
-            `>>>>> Invalid ${errorList[i]}: ${
-              formValidationErrors[errorList[i]]
-            }`
-          );
+          // console.log(
+          //   `>>>>> Invalid ${errorList[i]}: ${
+          //     formValidationErrors[errorList[i]]
+          //   }`
+          // );
           err = true;
           break;
         }

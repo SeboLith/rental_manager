@@ -1,10 +1,8 @@
 /*eslint-disable*/
-import React, { useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -13,7 +11,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
-import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
@@ -29,7 +26,7 @@ export default function Sidebar(props) {
     return window.location.href.indexOf(routeName) > -1 ? true : false;
   }
 
-  const { color, image, logoText, routes } = props;
+  const { color, image, routes } = props;
 
   var links = (
     <List className={classes.list}>
@@ -78,22 +75,6 @@ export default function Sidebar(props) {
           );
         })}
       </>
-      <Link to="/logout" className={classes.dropdownLink}>
-        <ListItem button className={classes.itemLink}>
-          <PowerSettingsNewIcon
-            className={classNames(classes.itemIcon, {
-              [classes.itemIconRTL]: props.rtlActive
-            })}
-          />
-          <ListItemText
-            primary={logoText}
-            className={classNames(classes.itemText, {
-              [classes.itemTextRTL]: props.rtlActive
-            })}
-            disableTypography={true}
-          />
-        </ListItem>
-      </Link>
     </List>
   );
   return (
@@ -120,7 +101,7 @@ export default function Sidebar(props) {
           {image !== undefined ? (
             <div
               className={classes.background}
-              style={{ backgroundImage: "url(" + image + ")" }}
+              style={{ backgroundImage: `url(${image})` }}
             />
           ) : null}
         </Drawer>
@@ -140,7 +121,7 @@ export default function Sidebar(props) {
           {image !== undefined ? (
             <div
               className={classes.background}
-              style={{ backgroundImage: "url(" + image + ")" }}
+              style={{ backgroundImage: `url(${image})` }}
             />
           ) : null}
         </Drawer>

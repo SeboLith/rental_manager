@@ -16,47 +16,23 @@ import { useSelector } from 'react-redux';
 import useFormValidation from "../../hooks/userFormValidation.js";
 import { authenticateUser as submitFunction } from "../../actions/authenticateUser";
 
+import Header from "components/Header";
+// sections for this page
+import HeaderLinks from "components/Header/HeaderLinks";
+
+import styles from "./styles.js";
+
 const INITIAL_STATE = {
   username: "",
   password: ""
 };
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: "100vh"
-  },
-  image: {
-    backgroundImage: "url(https://source.unsplash.com/random)",
-    backgroundRepeat: "no-repeat",
-    backgroundColor:
-      theme.palette.type === "dark"
-        ? theme.palette.grey[900]
-        : theme.palette.grey[50],
-    backgroundSize: "cover",
-    backgroundPosition: "center"
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
-  },
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
-  }
-}));
+const useStyles = makeStyles(styles);
 
 export default function Login(props) {
 
   const classes = useStyles();
+  const { ...rest } = props;
   const { isLoading, isAuthenticated, formValidationErrors } = useSelector(state => state.auth);
 
   // if the user is authenticated, redirect them to the dashboard
@@ -78,6 +54,18 @@ export default function Login(props) {
   };
 
   return (
+    <>
+    <Header
+      brand="Nescion"
+      rightLinks={<HeaderLinks />}
+      fixed
+      color="transparent"
+      changeColorOnScroll={{
+        height: 400,
+        color: "white"
+      }}
+      {...rest}
+    />
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -154,5 +142,6 @@ export default function Login(props) {
         </form>
       </div>
     </Container>
+    </>
   );
 }

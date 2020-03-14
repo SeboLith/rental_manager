@@ -39,7 +39,7 @@ const useStyles = makeStyles(styles);
 export default function UserProfile() {
   const classes = useStyles();
   return (
-    <div>
+    <>
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
@@ -173,6 +173,6 @@ export default function UserProfile() {
           </Card>
         </GridItem>
       </GridContainer>
-    </div>
+    </>
   );
 }

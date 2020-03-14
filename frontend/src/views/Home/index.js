@@ -21,7 +21,7 @@ export default function Components(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
-    <div>
+    <>
       <Header
         brand="Nescion"
         rightLinks={<HeaderLinks />}
@@ -69,6 +69,6 @@ export default function Components(props) {
         <SectionDownload /> */}
       </div>
       <Footer />
-    </div>
+    </>
   );
 }

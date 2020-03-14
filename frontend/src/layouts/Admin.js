@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import PerfectScrollbar from "perfect-scrollbar";
@@ -54,7 +54,7 @@ export default function Admin({ ...rest }) {
     }
   };
   // initialize and destroy the PerfectScrollbar plugin
-  React.useEffect(() => {
+  useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current, {
         suppressScrollX: true,
@@ -86,7 +86,6 @@ export default function Admin({ ...rest }) {
       />
       <Sidebar
         routes={routes}
-        logoText={"Logout"}
         image={bgImage}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}

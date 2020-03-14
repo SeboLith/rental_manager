@@ -20,9 +20,9 @@ export default function(initialState, submitFunction) {
                 setSubmitting(false);
             }, 3000);
         } else {
-            Object.keys(errors).forEach(error => {
-                console.log(`>>>>> Invalid ${error}:::`, errors[error]);
-            });
+            // Object.keys(errors).forEach(error => {
+            //     console.log(`>>>>> Invalid ${error}:::`, errors[error]);
+            // });
             setSubmitting(false);
         }
         

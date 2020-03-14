@@ -34,6 +34,12 @@ export default function(state = initialState, actions) {
         isAuthenticated: true,
         isLoading: false
       };
+    case types.LOGGED_OUT:
+      return {
+        ...state,
+        token: "",
+        isAuthenticated: false
+      };
     case types.LOGOUT:
       return {
         ...state,
